@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import configureStore from './redux/configureStore';
 import App from './App';
 
-const state = {
+const initialState = {
   categories: [
     {
       idCategory: '1',
@@ -83,7 +83,7 @@ const state = {
   ],
 };
 
-const store = configureStore(state);
+const store = configureStore(initialState);
 
 ReactDOM.render(
   <React.StrictMode>
