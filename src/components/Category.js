@@ -1,16 +1,12 @@
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import card from '../styles/card.css';
-
-const cx = classNames.bind(card);
 
 const Category = ({ category }) => (
-  <div className={cx('card')}>
-    <Link to={`/meals/${category.strCategory}`} className={cx('card-link')}>
-      <img className={cx('card-img')} src={category.strCategoryThumb} alt={category.strCategory} />
-      <div className={cx('card-body')}>
-        <h3 className={cx('card-title')}>
+  <div className="card">
+    <Link to={`/meals/${category.strCategory}`} className="card-link">
+      <img className="card-img" src={category.strCategoryThumb} alt={category.strCategory} />
+      <div className="card-body">
+        <h3 className="card-title">
           {category.strCategory}
         </h3>
       </div>
