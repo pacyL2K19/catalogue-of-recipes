@@ -1,7 +1,7 @@
 import React from 'react';
 
 const MealDetails = () => (
-    <div></div>
-)
+  <div />
+);
 
 export default MealDetails;

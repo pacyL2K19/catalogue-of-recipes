@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Meals = () => (
-    <div></div>
-)
+  <div />
+);
 
 export default Meals;
