@@ -1,7 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
-import Meals from '../containers/Meals';
+import Meals from './containers/Meals';
 // import Categories from '../containers/Categories';
-import MealDetail from '../containers/MealDetails';
+import MealDetail from './containers/MealDetails';
 
 const Routes = () => (
   <Switch>
