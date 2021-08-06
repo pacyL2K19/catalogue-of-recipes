@@ -7,7 +7,11 @@ const Header = () => {
   };
   return (
     <div className="container-fluid d-flex flex-row justify-content-between py-3 px-5 header">
-      <p className="mb-0">Home</p>
+      <img
+        alt="Logo"
+        src="https://www.pngkey.com/png/detail/211-2117515_-merlinwebdesign-chicken-logo-png.png"
+        className="logo"
+      />
       <input className="input-search" value={search} onChange={handleChange} />
     </div>
   );
