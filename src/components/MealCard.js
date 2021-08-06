@@ -4,8 +4,18 @@ import PropTypes from 'prop-types';
 const MealCard = (props) => {
   const { meal, onClick } = props;
   return (
-    <div>
+    <div className="meal-card-container">
       <img onClick={onclick} className="img-meal" src={meal.strMealThumb} alt="Meal" />
+      <div className="w-100">
+        <h2>{meal.strMeal}</h2>
+        {/** STATIC DATA */}
+        <h3>Time to cook: 10min</h3>
+        <h3>Cal: 140Kcal</h3>
+      </div>
+      <div className="text-light">
+        <i className="fas fa-eye" />
+        See More
+      </div>
     </div>
   );
 };

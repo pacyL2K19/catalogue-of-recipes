@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchMeals } from '../API/api';
+import MealCard from '../components/MealCard';
 
 const Meals = () => {
   const [meals, setMeals] = useState([]);
@@ -18,7 +19,7 @@ const Meals = () => {
       Meals
       {
         meals.map((meal) => (
-          <p className="h2" key={meal.idMeal}>{meal.strMeal}</p>
+          <MealCard key={meal.idMeal} meal={meal} onClick={() => {}} />
         ))
       }
     </div>
