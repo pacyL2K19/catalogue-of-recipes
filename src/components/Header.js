@@ -6,7 +6,7 @@ const Header = () => {
     setSearch(e.target.value);
   };
   return (
-    <div className="container p-3 header">
+    <div className="container-fluid d-flex flex-row justify-content-between py-3 px-5 header">
       <p className="mb-0">Home</p>
       <input className="input-search" value={search} onChange={handleChange} />
     </div>
