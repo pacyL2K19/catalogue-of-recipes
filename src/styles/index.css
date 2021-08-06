@@ -9,4 +9,15 @@
 .btn-open-details {
   background-color: green;
   border: none;
+  width: 100%;
+}
+
+.meal-title {
+  font-size: 18px;
+  color: rgb(101, 99, 115);
+}
+
+.meal-description {
+  font-size: 14px;
+  color: rgb(137, 135, 147);
 }
