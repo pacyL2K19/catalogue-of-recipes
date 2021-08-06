@@ -2,8 +2,7 @@
 
 /** MEAL COMPOENENT */
 .img-meal {
-  height: 120px;
-  width: 120px;
+  width: 100%;
   border-radius: 5px;
 }
 
