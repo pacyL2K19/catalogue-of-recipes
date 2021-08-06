@@ -25,3 +25,9 @@
 .details-bloc {
   background-color: rgb(224, 230, 235);
 }
+
+/** FOR THE HEADER COMPONENT */
+.header {
+  background-color: white;
+  box-shadow: 0 0 4px rgb(203, 213, 221);
+}
