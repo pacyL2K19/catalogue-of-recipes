@@ -6,3 +6,8 @@
   width: 120px;
   border-radius: 5px;
 }
+
+.btn-open-details {
+  background-color: green;
+  border: none;
+}
