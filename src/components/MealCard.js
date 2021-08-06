@@ -5,7 +5,7 @@ const MealCard = (props) => {
   const { meal, onClick } = props;
   return (
     <div className="meal-card-container">
-      <img onClick={onclick} className="img-meal" src={meal.strMealThumb} alt="Meal" />
+      <img onClick={onClick} className="img-meal" src={meal.strMealThumb} alt="Meal" />
       <div className="w-100">
         <h2>{meal.strMeal}</h2>
         {/** STATIC DATA */}
