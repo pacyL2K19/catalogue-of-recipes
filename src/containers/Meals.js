@@ -5,7 +5,7 @@ import MealCard from '../components/MealCard';
 const Meals = () => {
   const [meals, setMeals] = useState([]);
   useEffect(() => {
-    fetchMeals('Seafood')
+    fetchMeals('chicken')
       .then((data) => {
         console.log('DATA ===>', data);
         setMeals(data.meals);
@@ -18,7 +18,7 @@ const Meals = () => {
     <div className="container">
       <div className="row">
         {
-        meals.map((meal) => (
+        meals?.map((meal) => (
           <MealCard key={meal.idMeal} meal={meal} onClick={() => {}} />
         ))
       }
