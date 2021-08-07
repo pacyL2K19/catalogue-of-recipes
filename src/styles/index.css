@@ -31,3 +31,7 @@
   background-color: white;
   box-shadow: 0 0 4px rgb(203, 213, 221);
 }
+
+.logo {
+  height: 40px;
+}
