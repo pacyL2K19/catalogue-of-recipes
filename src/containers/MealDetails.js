@@ -22,7 +22,7 @@ const MealDetails = () => {
   }, []);
   return (
     <div className="container">
-      <div className="row">
+      <div className="row pt-5">
         <div
           className="col-5"
           style={{
@@ -30,11 +30,17 @@ const MealDetails = () => {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            height: '200px',
-            // width: '120px',
+            height: '300px',
           }}
-        >
-          Img
+        />
+        <div className="col-7 px-4">
+          <h1 className="meal-title border-bottom">
+            {meal.strArea}
+            {' '}
+            {meal.strCategory}
+          </h1>
+          <p className="meal-instruction-header">Instrucions</p>
+          <p className=".meal-description">{meal.strInstructions}</p>
         </div>
       </div>
     </div>
