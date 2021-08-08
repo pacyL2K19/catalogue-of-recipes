@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [category, setCategory] = useState('');
@@ -14,11 +15,13 @@ const Header = () => {
   ]);
   return (
     <div className="container-fluid d-flex flex-row justify-content-between py-3 px-5 header">
-      <img
-        alt="Logo"
-        src="https://seeklogo.com/images/F/food-logo-59E5A73AFD-seeklogo.com.png"
-        className="logo"
-      />
+      <Link to="/">
+        <img
+          alt="Logo"
+          src="https://seeklogo.com/images/F/food-logo-59E5A73AFD-seeklogo.com.png"
+          className="logo"
+        />
+      </Link>
       <select className="form-select" id="categories" name="categories" value={category} onChange={handleChange}>
         <option value="" hidden>Select category</option>
         {
