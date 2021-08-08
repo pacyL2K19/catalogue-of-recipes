@@ -47,3 +47,10 @@
 .logo {
   height: 40px;
 }
+
+/** FOR THE MEAL DETAIL PAGE */
+
+.meal-details {
+  background-color: rgb(226, 228, 235);
+  border-radius: 0 0 50px 50px;
+}

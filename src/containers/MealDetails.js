@@ -30,17 +30,21 @@ const MealDetails = () => {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            height: '300px',
+            height: '400px',
+            borderRadius: '10px',
+            boxShadow: '0 0 4px rgb(222, 240, 211)',
           }}
         />
         <div className="col-7 px-4">
-          <h1 className="meal-title border-bottom">
+          <h1 className="meal-title border-bottom pb-3">
             {meal.strArea}
             {' '}
             {meal.strCategory}
           </h1>
-          <p className="meal-instruction-header">Instrucions</p>
-          <p className=".meal-description">{meal.strInstructions}</p>
+          <div className="meal-details p-3">
+            <p className="meal-instruction-header">Instructions</p>
+            <p className=".meal-description">{meal.strInstructions}</p>
+          </div>
         </div>
       </div>
     </div>
