@@ -18,10 +18,10 @@ const Meals = () => {
     <div className="container">
       <div className="row">
         {
-        meals?.map((meal) => (
-          <MealCard key={meal.idMeal} meal={meal} onClick={() => {}} />
-        ))
-      }
+          meals?.map((meal) => (
+            <MealCard key={meal.idMeal} meal={meal} onClick={() => {}} />
+          ))
+        }
       </div>
     </div>
   );

@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
 
 const Header = () => {
-  const [search, setSearch] = useState('');
+  const [category, setCategory] = useState('');
   const handleChange = (e) => {
-    setSearch(e.target.value);
+    setCategory(e.target.value);
   };
+  const [categories] = useState([
+    'chicken',
+    'pork',
+    'vegetarian',
+    'pasta',
+    'vegan',
+  ]);
   return (
     <div className="container-fluid d-flex flex-row justify-content-between py-3 px-5 header">
       <img
@@ -12,7 +19,15 @@ const Header = () => {
         src="https://seeklogo.com/images/F/food-logo-59E5A73AFD-seeklogo.com.png"
         className="logo"
       />
-      <input className="input-search" value={search} onChange={handleChange} />
+      <select className="form-select" id="categories" name="categories" value={category} onChange={handleChange}>
+        <option value="" hidden>Select category</option>
+        {
+            categories.map((category) => (
+              <option key={category} value={category.toLowerCase()}>{category}</option>
+            ))
+          }
+      </select>
+      {/* <input className="input-search" value={search} onChange={handleChange} /> */}
     </div>
   );
 };
