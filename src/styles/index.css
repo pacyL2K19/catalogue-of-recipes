@@ -17,6 +17,11 @@
   color: rgb(101, 99, 115);
 }
 
+.meal-card-container,
+.details-bloc {
+  text-decoration: none;
+}
+
 .meal-description {
   font-size: 14px;
   color: rgb(137, 135, 147);
