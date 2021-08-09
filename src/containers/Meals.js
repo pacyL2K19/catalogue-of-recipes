@@ -1,19 +1,35 @@
-import React, { useEffect, useState } from 'react';
-import { fetchMeals } from '../API/api';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import MealCard from '../components/MealCard';
+import * as actionsType from '../store/actions/actionTypes';
+import { changeCategory } from '../store/actions/index';
+import { fetchMealsByCategory } from '../store/actions/thunk';
 
-const Meals = () => {
-  const [meals, setMeals] = useState([]);
+const Meals = ({
+  meals: { meals, status, error }, category, changeCategory, fetchMealsByCategory,
+}) => {
+  // const [meals, setMeals] = useState([]);
   useEffect(() => {
-    fetchMeals('chicken')
-      .then((data) => {
-        console.log('DATA ===>', data);
-        setMeals(data.meals);
-      })
-      .catch((error) => {
-        console.log('ERROR ==>', error);
-      });
-  }, []);
+    changeCategory(category);
+    if (status === actionsType.IDLE_MEALS || category) {
+      fetchMealsByCategory(category || 'beef');
+    }
+  }, [category]);
+
+  if (status === actionsType.LOADING_MEALS) {
+    return <div>Loading ...</div>;
+  }
+
+  if (status === actionsType.ERROR_MEALS) {
+    return (
+      <div>
+        Error:
+        {error}
+      </div>
+    );
+  }
+
   return (
     <div className="container">
       <div className="row">
@@ -27,4 +43,29 @@ const Meals = () => {
   );
 };
 
-export default Meals;
+Meals.propTypes = {
+  meals: PropTypes.shape({
+    status: PropTypes.string.isRequired,
+    error: PropTypes.string,
+    meals: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
+  }).isRequired,
+  category: PropTypes.string,
+  changeCategory: PropTypes.func.isRequired,
+  fetchMealsByCategory: PropTypes.func.isRequired,
+};
+
+Meals.defaultProps = {
+  category: 'chicken',
+};
+
+const mapStateToProps = (state) => ({
+  meals: state.meals,
+  category: state.category,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  changeCategory: (category) => dispatch(changeCategory(category)),
+  fetchMealsByCategory: (category) => dispatch(fetchMealsByCategory(category)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Meals);
