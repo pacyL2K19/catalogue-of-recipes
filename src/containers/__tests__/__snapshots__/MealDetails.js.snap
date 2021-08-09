@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should test meal after action is dispatched 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="row pt-5"
+  >
+    <div
+      class="col-5"
+      style="background-image: url(undefined); background-size: cover; background-position: center; background-repeat: no-repeat; height: 400px; border-radius: 10px; box-shadow: 0 0 4px rgb(222, 240, 211);"
+    />
+    <div
+      class="col-7 px-4"
+    >
+      <h1
+        class="meal-title border-bottom pb-3"
+      >
+         
+      </h1>
+      <div
+        class="meal-details p-3"
+      >
+        <p
+          class="meal-instruction-header"
+        >
+          Instructions
+        </p>
+        <p
+          class="meal-description"
+          data-testid="meal-description"
+        >
+          This is an instructions for a meal.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
