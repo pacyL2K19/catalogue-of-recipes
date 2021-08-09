@@ -51,7 +51,7 @@ const MealDetails = ({ meal: { status, meal, error }, dispatch }) => {
           </h1>
           <div className="meal-details p-3">
             <p className="meal-instruction-header">Instructions</p>
-            <p className=".meal-description">{meal.strInstructions}</p>
+            <p className="meal-description" data-testid="meal-description">{meal.strInstructions}</p>
           </div>
         </div>
       </div>

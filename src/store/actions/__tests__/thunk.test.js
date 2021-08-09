@@ -57,7 +57,7 @@ describe('dispatch async action to fetch meals by category', () => {
   });
 });
 
-describe('dispatch async action to fetch meal by id', () => {
+describe('Dispatch async action to fetch meal by id', () => {
   test('should create meal in the store', () => {
     const data = {
       meals: [
@@ -70,7 +70,10 @@ describe('dispatch async action to fetch meal by id', () => {
 
     const expectedAction = [
       { type: actionsType.LOADING_MEAL },
-      { data: data.meals[0], type: actionsType.SUCCESS_MEAL },
+      {
+        data: data.meals[0],
+        type: actionsType.SUCCESS_MEAL,
+      },
     ];
 
     fetchMock.getOnce(`${API.BASE_URL}/${API.LOOKUP_ENDPOINT}/?i=123`, {
