@@ -1,25 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchMeal } from '../API/api';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { fetchMealById } from '../store/actions/thunk';
+import * as actionsType from '../store/actions/actionTypes';
 
-const MealDetails = () => {
+const MealDetails = ({ meal: { status, meal, error }, dispatch }) => {
   const { id } = useParams();
-  const [meal, setMeal] = useState({});
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    if (id) {
-      fetchMeal(id)
-        .then((data) => {
-          setMeal(data.meals[0]);
-          console.log('DATA ==>', data.meals[0]);
-        })
-        .catch((error) => {
-          console.log('ERROR ==>', error);
-        });
-      // dispatch(fetchMealById(id));
+    if (id !== meal.idMeal) {
+      dispatch(fetchMealById(id));
     }
   }, []);
+
+  if (status === actionsType.LOADING_MEAL) {
+    return <div>Loading ...</div>;
+  }
+
+  if (status === actionsType.ERROR_MEAL) {
+    return (
+      <div>
+        Error:
+        {error}
+      </div>
+    );
+  }
+
   return (
     <div className="container">
       <div className="row pt-5">
@@ -51,4 +59,17 @@ const MealDetails = () => {
   );
 };
 
-export default MealDetails;
+MealDetails.propTypes = {
+  meal: PropTypes.shape({
+    status: PropTypes.string.isRequired,
+    error: PropTypes.string,
+    meal: PropTypes.objectOf(PropTypes.string),
+  }).isRequired,
+  dispatch: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  meal: state.meal,
+});
+
+export default connect(mapStateToProps)(MealDetails);
