@@ -4,6 +4,7 @@
     "es6": true,
     "jest": true
   },
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -11,7 +12,6 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "parser": "react-scripts/node_modules/babel-eslint",
   "extends": ["airbnb", "plugin:react/recommended"],
   "plugins": ["react"],
   "rules": {
