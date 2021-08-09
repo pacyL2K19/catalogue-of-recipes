@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { fetchMealsByCategory } from '../store/actions/thunk';
 
-const Filter = () => {
+const Filter = ({ fetchMealsByCategory }) => {
   const [category, setCategory] = useState('');
   const history = useHistory();
   const handleChange = (e) => {
@@ -30,4 +32,12 @@ const Filter = () => {
   );
 };
 
-export default Filter;
+Filter.propTypes = {
+  fetchMealsByCategory: PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  fetchMealsByCategory: (query) => dispatch(fetchMealsByCategory(query)),
+});
+
+export default connect(null, mapDispatchToProps)(Filter);
