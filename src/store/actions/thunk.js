@@ -25,4 +25,4 @@ const fetchMealById = (id) => async (dispatch) => {
   }
 };
 
-export { fetchMealsByCategory, searchMeals, fetchMealById };
+export { fetchMealsByCategory, fetchMealById };
