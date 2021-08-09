@@ -6,7 +6,15 @@ import reportWebVitals from './reportWebVitals';
 import configureStore from './store/configureStore';
 import App from './App';
 
-const initialState = {};
+const initialState = {
+  categories: [
+    'chicken',
+    'pork',
+    'vegetarian',
+    'pasta',
+    'vegan',
+  ],
+};
 
 const store = configureStore(initialState);
 

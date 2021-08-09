@@ -1,27 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchMealsByCategory } from '../store/actions/thunk';
 
-const Filter = ({ fetchMealsByCategory }) => {
-  const [category, setCategory] = useState('');
+const Filter = ({ fetchMealsByCategory, categories }) => {
   const history = useHistory();
   const handleChange = (e) => {
     e.preventDefault();
-    setCategory(e.target.value);
     fetchMealsByCategory(e.target.value);
     history.push('/');
   };
-  const [categories] = useState([
-    'chicken',
-    'pork',
-    'vegetarian',
-    'pasta',
-    'vegan',
-  ]);
   return (
-    <select className="form-select" id="categories" name="categories" value={category} onChange={handleChange}>
+    <select className="form-select" id="categories" name="categories" onChange={handleChange}>
       <option value="" hidden>Select category</option>
       {
           categories.map((category) => (
@@ -34,10 +25,15 @@ const Filter = ({ fetchMealsByCategory }) => {
 
 Filter.propTypes = {
   fetchMealsByCategory: PropTypes.func.isRequired,
+  categories: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
+
+const mapStateToProps = (state) => ({
+  categories: state.categories,
+});
 
 const mapDispatchToProps = (dispatch) => ({
   fetchMealsByCategory: (query) => dispatch(fetchMealsByCategory(query)),
 });
 
-export default connect(null, mapDispatchToProps)(Filter);
+export default connect(mapStateToProps, mapDispatchToProps)(Filter);
