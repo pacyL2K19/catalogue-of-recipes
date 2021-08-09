@@ -9,7 +9,6 @@ import { fetchMealsByCategory } from '../store/actions/thunk';
 const Meals = ({
   meals: { meals, status, error }, category, changeCategory, fetchMealsByCategory,
 }) => {
-  // const [meals, setMeals] = useState([]);
   useEffect(() => {
     changeCategory(category);
     if (status === actionsType.IDLE_MEALS || category) {
