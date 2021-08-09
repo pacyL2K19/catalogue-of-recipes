@@ -6,9 +6,9 @@ import reportWebVitals from './reportWebVitals';
 import configureStore from './store/configureStore';
 import App from './App';
 
-const state = {};
+const initialState = {};
 
-const store = configureStore(state);
+const store = configureStore(initialState);
 
 ReactDOM.render(
   <React.StrictMode>
