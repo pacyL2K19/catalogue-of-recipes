@@ -1,0 +1,56 @@
+/** TO UPDATE  */
+
+/** MEAL COMPOENENT */
+.img-meal {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.btn-open-details {
+  background-color: green;
+  border: none;
+  width: 100%;
+}
+
+.meal-title {
+  font-size: 18px;
+  color: rgb(101, 99, 115);
+}
+
+.meal-card-container,
+.details-bloc {
+  text-decoration: none;
+}
+
+.meal-instruction-header {
+  color: rgb(90, 89, 98);
+  font-size: 15px;
+  font-style: italic;
+  font-family: sans-serif;
+}
+
+.meal-description {
+  font-size: 14px;
+  color: rgb(137, 135, 147);
+}
+
+.details-bloc {
+  background-color: rgb(224, 230, 235);
+}
+
+/** FOR THE HEADER COMPONENT */
+.header {
+  background-color: white;
+  box-shadow: 0 0 4px rgb(203, 213, 221);
+}
+
+.logo {
+  height: 40px;
+}
+
+/** FOR THE MEAL DETAIL PAGE */
+
+.meal-details {
+  background-color: rgb(226, 228, 235);
+  border-radius: 0 0 50px 50px;
+}
